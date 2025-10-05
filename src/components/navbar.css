@@ -1,0 +1,24 @@
+.nav-item{
+    font-family: "recoleta-semibold";
+    font-size: 18px;
+    text-transform: uppercase;
+    cursor: pointer;
+    letter-spacing: 1px;
+    
+}
+
+.nav-list{
+ display: flex;
+align-items: center;
+gap: 2rem;
+
+}
+
+.nav-logo{
+    display: flex;
+    height: 80px;
+flex-direction: column;
+align-items: center;
+flex: 1 0 0;
+
+}

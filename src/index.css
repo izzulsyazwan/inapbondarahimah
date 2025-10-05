@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+
+/* Page defaults */
+body {
+  width: 100dvw;
+  overflow-x: hidden;
+  background-color: #FFF9F4;
+}
+
+/*Fonts*/
+
+@font-face {
+  font-family: "recoleta-medium";
+  src: url('../public/fonts/fonnts.com-recoleta-regular.otf') format('opentype');
+}
+@font-face {
+  font-family: "recoleta-bold";
+  src: url('../public/fonts/fonnts.com-recoleta-bold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: "Noto-Serif";
+  src: url('../public/fonts/NotoSerif-VariableFont_wdth\,wght.ttf') format('trueType');
+}
+
+
+@theme{
+  --font-recoleta-medium: "recoleta-medium", "sans-serif";
+  --font-recoleta-bold: "recoleta-bold", "sans-serif";
+  --font-noto-serif: "Noto-Serif", "serif";
+}
+
+/*Custom utilities & component classes */
+@layer utilities {
+  
+  .display-font{
+    font-family: "recoleta-bold";
+    color: #9EA676;
+    text-align: center;
+    text-shadow: 4px 3px 0 #212319;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #626845;
+    line-height: 125%; /* 5.625rem */
+    text-transform: uppercase;
+  }
+
+  .h2{
+    font-family: "recoleta-bold";
+    color: #9EA676;
+    text-align: center;
+    text-shadow: 4px 3px 0 #212319;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #626845;
+    line-height: 125%; /* 5.625rem */
+    font-size: 3rem;
+  }
+
+  .main-container{
+    @apply my-20 flex items-center justify-center
+  }
+
+  .custom-container{
+    @apply flex flex-col items-center gap-[3rem] self-stretch max-w-[1440px];
+    @apply px-[20px] py-[40px];
+
+    @media (min-width: 1024px) {
+      @apply px-[2.5rem] py-[5rem];
+      
+    }
+  }
+  .img-container {
+    width: 100%; 
+    aspect-ratio: 1/1;
+    overflow: hidden; 
+
+    @media (min-width: 1024px) {
+      aspect-ratio: 16/9;
+
+    }
+
+  }
+}
+
+.img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Or 'contain' or 'fill' */
+  object-position: center; /* Or 'top', 'bottom', etc. */
+}
+

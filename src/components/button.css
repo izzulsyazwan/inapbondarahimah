@@ -1,0 +1,72 @@
+/* === Parametric button-1 (tunable) === */
+.button-1 {
+  /* Defaults — override these anywhere (inline style, parent scope, or extra class) */
+  --scoop: 12px;             /* corner “bite” size */
+  --border: 2px;           /* border thickness drawn by the mask */
+  --borderColor: #000000;    /* border color */
+  --bgColor: none;           /* inner fill color */
+  --what: 30px;              /* inner gap used by the stripe sizes in your mixin */
+  --textColor: #000000;      /* label color */
+
+  display: inline-block;
+  background: unset;
+  border: unset;
+  padding: unset;
+  appearance: none;
+  text-decoration: none;
+  color: var(--textColor);
+  transition: background .2s ease, color .2s ease;
+}
+
+.button-1:hover,
+.button-1:focus {
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Scooped-corner masked inner element */
+.button-1 .button-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  gap: 24px;
+  font-family: 'recoleta-semibold', serif;
+  font-size: 18px;
+  height: 64px;
+  width: var(--btn-w, 240px);/* use CSS var, fallback to 240px */
+
+  /* Background composed exactly like your mixin, now fully variable-driven */
+  background:
+    radial-gradient(var(--scoop) at var(--scoop) var(--scoop),
+      #0000 calc(98% - var(--border)),
+      var(--borderColor) calc(100% - var(--border)) 98%,
+      #0000)
+      calc(var(--scoop) * -1) calc(var(--scoop) * -1),
+    linear-gradient(90deg, var(--borderColor) var(--border), #0000 0 calc(100% - var(--border)), var(--borderColor) 0)
+      50% / 100% calc(100% - var(--what) + var(--scoop)) no-repeat,
+    linear-gradient(var(--borderColor) var(--border), #0000 0 calc(100% - var(--border)), var(--borderColor) 0)
+      50% / calc(100% - var(--what) + var(--scoop)) 100% no-repeat,
+    var(--bgColor);
+
+  /* Safari + standard mask */
+  --mask:
+    radial-gradient(calc(var(--scoop) - var(--border)) at var(--scoop) var(--scoop),
+      #0000 98%, #000)
+      calc(var(--scoop) * -1) calc(var(--scoop) * -1);
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
+
+  transition: background .3s ease;
+}
+
+/* Example hover (you can still override via variables if you want different behavior) */
+.button-1:hover {
+  /* Swap colors while keeping params adjustable */
+  --borderColor: #000000;
+  --bgColor: #000000;
+  --textColor: #ffffff;
+  color: var(--textColor);
+}
