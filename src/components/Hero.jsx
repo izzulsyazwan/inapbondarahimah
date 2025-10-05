@@ -25,7 +25,7 @@ export default function Hero() {
             </div>
           </div>
           <motion.div className="img-container relative" style={{ y: imageY }}>
-            <img src="public/img/image 1.png" alt="Hero" className="img" />
+            <img src="img/image 1.png" alt="Hero" className="img" />
           </motion.div>
           <Button text="Tempah Sekarang" />
         </div>

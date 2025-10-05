@@ -58,7 +58,7 @@ export default function About() {
           {/* Header content*/}
           <div className="relative md:absolute left-1/2 top-1 -translate-x-1/2 mt-5 z-20 flex flex-col items-center gap-[2rem] w-[100%] md:w-[320px] lg:w-[460px] mb-10">
             <img
-              src="/public/img/inap_bonda_house.webp"
+              src="img/inap_bonda_house.webp"
               alt="Inap Bonda House"
               className="w-[70%] md:w-[30vw] h-auto"
             />

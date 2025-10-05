@@ -8,7 +8,7 @@ export default function Navbar() {
   return (
     <>
       <div className="flex items-center justify-center border-b">
-        <nav className="flex items-center justify-between py-4 px-10  w-[100%] max-w-[1440px]">
+        <nav className="flex items-center justify-between py-4 px-5 lg:px-10  w-[100%] max-w-[1440px]">
           {/* Navbar Desktop */}
           <div className="hidden lg:block flex-1 justify-start ">
             <div className="nav-list gap-[2rem]">
@@ -22,11 +22,11 @@ export default function Navbar() {
             </div>
           </div>
           {/*Mobile Left button */}
-          <div className="flex items-center justify-center lg:hidden">
-            <Button text="Tempah" width="160px" />
+          <div className=" flex-1 lg:hidden flex justify-start items-center">
+            <div className="flex-none">Menu</div>
           </div>
           {/*Nav Logo*/}
-          <div className="nav-logo ">
+          <div className="nav-logo h-16 lg:h-20 ">
             <img
               src={logo}
               alt="Inap Bonda Rahimah"
@@ -46,8 +46,10 @@ export default function Navbar() {
             <Button text="Tempah" width="160px" />
           </div>
           {/*Mobile right button */}
-          <div className="flex items-center justify-center lg:hidden">
-            <div className="nav-item">Tempah</div>
+          <div className="flex-1 flex justify-end lg:hidden">
+            <button className="nav-item" style={{ fontSize: "16px" }}>
+              Tempah
+            </button>
           </div>
         </nav>
       </div>
